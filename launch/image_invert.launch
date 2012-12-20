@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find tutorialROSOpenCV)/launch/camera_test.launch"/>
+  <node pkg="image_view" type="image_view" name="image_view" output="screen" >
+      <remap from="image" to="/camera/image_raw"/>
+  </node>
+  <node pkg="image_view" type="image_view" name="image_view_inverted" output="screen">
+      <remap from="image" to="/camera/image_processed"/>
+  </node>
+  <node pkg="tutorialROSOpenCV" type="tutorialROSOpenCV" name="tutorialROSOpenCV" output="screen"></node>
+</launch>
+
